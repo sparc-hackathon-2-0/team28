@@ -12,17 +12,18 @@
 	android:layout_margin="10dp" android:text="@string/titleSurvival"/>
 	
 	<!--  Map Button -->
-	
-	<!-- Status EditText -->
-	<EditText android:layout_width="fill_parent"
-	android:layout_height="fill_parent" android:layout_weight="1"
-	android:hint="@string/hintText" android:id="@+id/editText"
-	android:background="#cfff"
-	android:gravity="top|center_horizontal"></EditText>
-	
-	<!-- Update Button -->
 	<Button android:layout_width="fill_parent"
-	android:layout_height="wrap_content" android:text="@string/buttonUpdate"
-	android:textSize="20sp" android:id="@+id/buttonUpdate"></Button>
+	android:layout_height="wrap_content" android:text="@string/buttonMap"
+	android:textSize="20sp" android:id="@+id/buttonMap"></Button>
+	
+	<!--  Wall Button -->
+	<Button android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:text="@string/buttonWall"
+	android:textSize="20sp" android:id="@+id/buttonWall"></Button>
+	
+	<!--  Trade Button -->
+	<Button android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:text="@string/buttonTrade"
+	android:textSize="20sp" android:id="@+id/buttonTrade"></Button>
 
 </LinearLayout>
