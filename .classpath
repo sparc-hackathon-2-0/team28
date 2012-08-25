@@ -4,5 +4,8 @@
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="lib" path="jtwitter-2.6.4/jtwitter.jar"/>
+	<classpathentry kind="lib" path="jtwitter-2.6.4/lib/signpost-core.jar"/>
+	<classpathentry kind="lib" path="jtwitter-2.6.4/lib/signpost-version-1.2.1.1"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
