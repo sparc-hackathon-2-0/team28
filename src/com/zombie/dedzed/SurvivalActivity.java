@@ -24,14 +24,26 @@ public class SurvivalActivity extends Activity implements OnClickListener {
         wallButton = (Button) findViewById(R.id.buttonWall);
         tradeButton = (Button) findViewById(R.id.buttonTrade);
         
+        mapButton.setOnClickListener(this);
+        wallButton.setOnClickListener(this);
+        tradeButton.setOnClickListener(this);
     }
     
 	// Called when Map button is clicked //
     public void onClick(View v) {
+    	Log.d(TAG, "onMapClicked");
 		switch(v.getId()) {
 		case R.id.buttonMap:
 			startActivity(new Intent(this, MapActivity.class));
-			Log.d(TAG, "onMapClicked Launching MapActivity");
+			Log.d(TAG, "Launched MapActivity");
+		break;
+		case R.id.buttonWall:
+			startActivity(new Intent(this, MapActivity.class));
+			Log.d(TAG, "Launched WallActivity");
+		break;
+		case R.id.buttonTrade:
+			startActivity(new Intent(this, MapActivity.class));
+			Log.d(TAG, "Launched WallActivity");
 		break;
 		}
 		
