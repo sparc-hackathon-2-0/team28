@@ -2,43 +2,35 @@
 
 package com.zombie.dedzed;
 
-import winterwell.jtwitter.OAuthSignpostClient;
 import winterwell.jtwitter.Twitter;
 import winterwell.jtwitter.TwitterException;
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class TradeActivity extends Activity {
 
 	// private TextView speedText;
 	private static final String TAG = "TradeActivity";
-
-	private OAuthSignpostClient oauthClient = new OAuthSignpostClient(OAuthSignpostClient.JTWITTER_OAUTH_KEY, OAuthSignpostClient.JTWITTER_OAUTH_SECRET, "oob");
-	
 	private Twitter twitter;
+	
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.trade);
         
-//        twitter = new Twitter("zed_free", oauthClient);
+        twitter = new Twitter("zedfreeradio", "zedfree13"); //
+		twitter.setAPIRootUrl("http://yamba.marakana.com/api");
         
-//        String status = "ZED FREE RADIO, Broadcasting now!";
-//		new PostToTwitter().execute(status); //
-//		Log.d(TAG, "firstBroadcast");
+        String status = "ZED FREE RADIO, Broadcasting now!";
+		new PostToTwitter().execute(status); //
+		Log.d(TAG, "firstBroadcast");
     }
+    
+    
     
     // TODO Attribution!
     class PostToTwitter extends AsyncTask<String, Integer, String> { //
@@ -46,7 +38,7 @@ public class TradeActivity extends Activity {
 		@Override
 		protected String doInBackground(String... statuses) { //
 			try {
-				winterwell.jtwitter.Status status = twitter.updateStatus(statuses[0]);
+				Twitter.Status status = twitter.updateStatus(statuses[0]);
 				return status.text;
 			} catch (TwitterException e) {
 				Log.e(TAG, e.toString());
