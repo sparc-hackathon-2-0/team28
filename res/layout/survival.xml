@@ -1,0 +1,29 @@
+<!-- Main Layout of Status Activity -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical" >
+
+	<!-- Title TextView-->
+	<TextView android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:gravity="center"
+	android:textSize="30sp" android:textColor="#f096"
+	android:layout_margin="10dp" android:text="@string/titleSurvival"/>
+	
+	<!--  Map Button -->
+	<Button android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:text="@string/buttonMap" android:textColor="#f096"
+	android:textSize="30sp" android:id="@+id/buttonMap"></Button>
+	
+	<!--  Wall Button -->
+	<Button android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:text="@string/buttonWall" android:textColor="#f096"
+	android:textSize="30sp" android:id="@+id/buttonWall"></Button>
+	
+	<!--  Trade Button -->
+	<Button android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:text="@string/buttonTrade" android:textColor="#f096"
+	android:textSize="30sp" android:id="@+id/buttonTrade"></Button>
+
+</LinearLayout>
