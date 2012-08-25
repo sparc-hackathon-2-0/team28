@@ -16,9 +16,10 @@ public final class R {
     }
     public static final class id {
         public static final int buttonMap=0x7f070001;
+        public static final int buttonStatTest=0x7f070005;
         public static final int buttonTrade=0x7f070003;
         public static final int buttonWall=0x7f070002;
-        public static final int menu_settings=0x7f070005;
+        public static final int menu_settings=0x7f070006;
         public static final int speedText=0x7f070004;
         public static final int textInfo=0x7f070000;
     }
@@ -42,6 +43,7 @@ public final class R {
         public static final int titleSurvival=0x7f040004;
         public static final int titleTrade=0x7f040008;
         public static final int titleWall=0x7f04000a;
+        public static final int titleZedApp=0x7f04000b;
         public static final int title_activity_survival=0x7f040003;
     }
     public static final class style {

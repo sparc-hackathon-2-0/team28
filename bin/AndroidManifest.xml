@@ -29,6 +29,8 @@
             android:label="@string/titleWall" />
         <activity android:name=".TradeActivity"
             android:label="@string/titleTrade" />
+        <activity android:name=".ZedApplication"
+            android:label="@string/titleZedApp" />
         
     </application>
 

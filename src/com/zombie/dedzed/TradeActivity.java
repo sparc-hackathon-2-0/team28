@@ -2,20 +2,31 @@
 
 package com.zombie.dedzed;
 
+import java.util.List;
+
 import winterwell.jtwitter.Twitter;
 import winterwell.jtwitter.TwitterException;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class TradeActivity extends Activity {
+public class TradeActivity extends Activity implements OnClickListener {
 
 	// private TextView speedText;
 	private static final String TAG = "TradeActivity";
-	private Twitter twitter;
+	public Twitter twitter;
+	private List<Twitter.Status> timeline;
+	private String timelineText;
+
+	TextView statusView;
 	
+	private Button testButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,15 +35,40 @@ public class TradeActivity extends Activity {
         
         twitter = new Twitter("zedfreeradio", "zedfree13"); //
 		twitter.setAPIRootUrl("http://yamba.marakana.com/api");
+		
+		timelineText = "";
+		testButton = (Button) findViewById(R.id.buttonStatTest);
+		testButton.setOnClickListener(this);
+		
+		statusView = (TextView) findViewById(R.id.speedText);
         
-        String status = "ZED FREE RADIO, Broadcasting now!";
+        String status = "ZED FREE RADIO, Broadcasting still!";
 		new PostToTwitter().execute(status); //
 		Log.d(TAG, "firstBroadcast");
     }
     
+    public void onClick(View v) {
+    		//Get the timeline from cloud
+		
+    	timelineText = "gettingStatuses...";
+//    	try{
+//			timeline = twitter.getHomeTimeline();
+//		} catch (TwitterException e) {
+//			Log.e(TAG, "Failure to connect to twitter service", e);
+//		}
+//		
+//		for (Twitter.Status status : timeline) {
+//			Log.d(TAG, status.text);
+//			timelineText = ("" + timelineText + status.text);
+//		}
+//    	
+//		Log.d(TAG, "onClicked");
+    	
+    	//statusView.setText(text)
+    	
+	}
     
-    
-    // TODO Attribution!
+ // TODO Attribution!
     class PostToTwitter extends AsyncTask<String, Integer, String> { //
 		// Called to initiate the background activity
 		@Override
@@ -57,8 +93,12 @@ public class TradeActivity extends Activity {
 		// Called once the background activity has completed
 		@Override
 		protected void onPostExecute(String result) {
-			Toast.makeText(TradeActivity.this, result, Toast.LENGTH_LONG).show();
+			// Toast.makeText(ZedApplication.this, result, Toast.LENGTH_LONG).show();
 		}
 	}
+	
+
+    
+    
     
 }
