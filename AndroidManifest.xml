@@ -2,6 +2,8 @@
     package="com.zombie.dedzed"
     android:versionCode="1"
     android:versionName="1.0" >
+    <!--Permission for gps- is this in the right place?-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <uses-sdk
         android:minSdkVersion="10"
@@ -20,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MapActivity"
+        <activity android:name=".myMapActivity"
             android:label="@string/titleMap" />
         <activity android:name=".WallActivity"
             android:label="@string/titleWall" />

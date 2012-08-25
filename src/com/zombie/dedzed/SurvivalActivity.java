@@ -34,9 +34,9 @@ public class SurvivalActivity extends Activity implements OnClickListener {
     	Log.d(TAG, "onMapClicked");
 		switch(v.getId()) {
 		case R.id.buttonMap:
-			startActivity(new Intent(this, MapActivity.class));
-			Log.d(TAG, "Launched MapActivity");
-		break;
+            Log.d(TAG, "Launched myMapActivity");
+			startActivity(new Intent(this, myMapActivity.class));
+			break;
 		case R.id.buttonWall:
 			startActivity(new Intent(this, WallActivity.class));
 			Log.d(TAG, "Launched WallActivity");

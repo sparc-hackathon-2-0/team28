@@ -18,13 +18,15 @@ public final class R {
         public static final int buttonMap=0x7f070000;
         public static final int buttonTrade=0x7f070002;
         public static final int buttonWall=0x7f070001;
-        public static final int menu_settings=0x7f070003;
+        public static final int menu_settings=0x7f070004;
+        public static final int textInfo=0x7f070003;
     }
     public static final class layout {
-        public static final int map=0x7f030000;
-        public static final int survival=0x7f030001;
-        public static final int trade=0x7f030002;
-        public static final int wall=0x7f030003;
+        public static final int activity_survival=0x7f030000;
+        public static final int map=0x7f030001;
+        public static final int survival=0x7f030002;
+        public static final int trade=0x7f030003;
+        public static final int wall=0x7f030004;
     }
     public static final class menu {
         public static final int activity_survival=0x7f060000;

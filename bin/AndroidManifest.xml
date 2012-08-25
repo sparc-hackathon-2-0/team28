@@ -20,7 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MapActivity"
+        <activity android:name="myMapActivity"
             android:label="@string/titleMap" />
         <activity android:name=".WallActivity"
             android:label="@string/titleWall" />
