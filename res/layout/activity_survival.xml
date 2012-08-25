@@ -1,14 +1,28 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+<!-- Main Layout of Status Activity -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_world"
-        tools:context=".SurvivalActivity" />
+	<!-- Title TextView-->
+	<TextView android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:gravity="center"
+	android:textSize="30sp" android:textColor="#f096"
+	android:layout_margin="10dp" android:text="@string/titleSurvival"/>
+	
+	<!--  Map Button -->
+	
+	<!-- Status EditText -->
+	<EditText android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:layout_weight="1"
+	android:hint="@string/hintText" android:id="@+id/editText"
+	android:background="#cfff"
+	android:gravity="top|center_horizontal"></EditText>
+	
+	<!-- Update Button -->
+	<Button android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:text="@string/buttonUpdate"
+	android:textSize="20sp" android:id="@+id/buttonUpdate"></Button>
 
-</RelativeLayout>
+</LinearLayout>
