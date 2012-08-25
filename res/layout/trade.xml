@@ -7,8 +7,7 @@
 	<!-- Title TextView-->
 	<TextView android:layout_width="fill_parent"
 	android:layout_height="wrap_content" android:gravity="center"
-	android:textSize="30sp" android:textColor="#f096"
+	android:textSize="30sp" android:textColor="#f096" android:id="@+id/speedText"
 	android:layout_margin="10dp" android:text="@string/titleTrade"/>
 	
-
 </LinearLayout>
