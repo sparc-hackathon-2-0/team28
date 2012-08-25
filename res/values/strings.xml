@@ -8,5 +8,8 @@
     <string name="buttonMap">Map</string>
     <string name="buttonWall">Wall</string>
     <string name="buttonTrade">Trade Ads</string>
+    <string name="titleTrade">Trade Ads</string>
+    <string name="titleMap">Map</string>
+    <string name="titleWall">Wall</string>
 
 </resources>

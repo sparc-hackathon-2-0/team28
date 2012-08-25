@@ -1,0 +1,14 @@
+<!-- Main Layout of Trade Activity --><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical" >
+
+	<!-- Title TextView-->
+	<TextView android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:gravity="center"
+	android:textSize="30sp" android:textColor="#f096"
+	android:layout_margin="10dp" android:text="@string/titleTrade"/>
+	
+
+</LinearLayout>

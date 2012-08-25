@@ -20,6 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MapActivity"
+            android:label="@string/titleMap" />
+        <activity android:name=".WallActivity"
+            android:label="@string/titleWall" />
+        <activity android:name=".TradeActivity"
+            android:label="@string/titleTrade" />
+        
     </application>
 
 </manifest>
