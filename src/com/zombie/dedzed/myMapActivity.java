@@ -14,7 +14,7 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class myMapActivity extends Activity  implements LocationListener {
+public class myMapActivity extends Activity implements LocationListener {
 
     /* this class implements LocationListener, which listens for both
       * changes in the location of the device and changes in the status
@@ -29,6 +29,11 @@ public class myMapActivity extends Activity  implements LocationListener {
     StringBuilder sb;
     int noOfFixes = 0;
 
+	private long lastLocEvent;
+	private double lastLong;
+	private double lastLat;
+	private boolean firstLoc;
+
 
     /** Called when the activity is first created. */
     @Override
@@ -42,6 +47,8 @@ public class myMapActivity extends Activity  implements LocationListener {
         /* the location manager is the most vital part it allows access
            * to location and GPS status services */
         lm = (LocationManager) getSystemService(LOCATION_SERVICE);
+        
+        firstLoc = true;
     }
 
     @Override
@@ -52,7 +59,7 @@ public class myMapActivity extends Activity  implements LocationListener {
            *
            * add location listener and request updates every 1000ms or 10m
            */
-        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 10f, this);
+        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0, this);
         super.onResume();
     }
 
@@ -62,9 +69,32 @@ public class myMapActivity extends Activity  implements LocationListener {
         lm.removeUpdates(this);
         super.onPause();
     }
+    
+    private double getDistance(double nowLong, double nowLat, double lLong, double lLat) {
+    	double changeLong = nowLong - lLong;
+    	double changeLat = nowLat - lLat;
+    	
+    	return (10000 * Math.sqrt((changeLong*changeLong) + (changeLat*changeLat)));
+    	
+    }
 
-    @Override
+    //@Override
     public void onLocationChanged(Location location) {
+
+    	double currLong = location.getLongitude();
+    	double currLat = location.getLatitude();
+    	double distance;
+    	
+    	if(firstLoc) {
+    		distance = 0.0;
+    		firstLoc = false;
+    	} else {
+    		distance = this.getDistance(currLong, currLat, lastLong, lastLat);
+    	}
+    	
+    	lastLong = currLong;
+    	lastLat = currLat;
+    	
         Log.v(tag, "Location Changed");
 
         sb = new StringBuilder(512);
@@ -78,17 +108,21 @@ public class myMapActivity extends Activity  implements LocationListener {
         sb.append('\n');
         sb.append('\n');
 
-        sb.append("Londitude: ");
-        sb.append(location.getLongitude());
+        sb.append("Distance trav: ");
+        sb.append(distance);
+        sb.append('\n');
+        
+        sb.append("Longitude: ");
+        sb.append(currLong);
         sb.append('\n');
 
         sb.append("Latitude: ");
-        sb.append(location.getLatitude());
+        sb.append(currLat);
         sb.append('\n');
 
-        sb.append("Altitiude: ");
-        sb.append(location.getAltitude());
-        sb.append('\n');
+//        sb.append("Altitiude: ");
+//        sb.append(location.getAltitude());
+//        sb.append('\n');
 
         sb.append("Accuracy: ");
         sb.append(location.getAccuracy());
@@ -101,7 +135,7 @@ public class myMapActivity extends Activity  implements LocationListener {
         txtInfo.setText(sb.toString());
     }
 
-    @Override
+    //@Override
     public void onProviderDisabled(String provider) {
         /* this is called if/when the GPS is disabled in settings */
         Log.v(tag, "Disabled");
@@ -112,14 +146,14 @@ public class myMapActivity extends Activity  implements LocationListener {
         startActivity(intent);
     }
 
-    @Override
+    //@Override
     public void onProviderEnabled(String provider) {
         Log.v(tag, "Enabled");
         Toast.makeText(this, "GPS Enabled", Toast.LENGTH_SHORT).show();
 
     }
 
-    @Override
+    //@Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
         /* This is called when the GPS status alters */
         switch (status) {
